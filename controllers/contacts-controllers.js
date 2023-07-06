@@ -55,7 +55,7 @@ const updateContactById = async (req, res) => { // controler function req-res
 
 }
 
-const updateFavorite = async(req, res) => {
+const updateStatusContact = async(req, res) => {
 
   const { error } = contactUpdateFavoriteSchema.validate(req.body);
   if (error) {
@@ -76,5 +76,5 @@ module.exports = {
     addContact: ctrlWrapper(addContact),
     deleteContactById: ctrlWrapper(deleteContactById),
     updateContactById: ctrlWrapper(updateContactById),
-    updateFavorite: ctrlWrapper(updateFavorite),
+    updateStatusContact: ctrlWrapper(updateStatusContact),
 }
