@@ -1,6 +1,7 @@
 const messages = {
-    400: "Missing required name field", // Bad Request
+    400: "Error from Joi or other validation library", // Bad Request
     404: "Not Found",
+    409: "Conflict",
 }
 
 const HttpError = (status, message = messages[status]) => {
