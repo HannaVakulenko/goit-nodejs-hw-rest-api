@@ -22,7 +22,7 @@ router.get("/current", authenticate, authController.getCurrent);
 // logout - http://localhost:3000/api/users/logout
 router.post("/logout", authenticate, authController.logout);
 
-// PATCH /api/users/:id/subscription
-router.patch("/users", authenticate, validateBody(schemas.updateUserSubscriptionSchema), authController.updateUserSubscription);
+// PATCH /api/users
+router.patch("/", authenticate, validateBody(schemas.updateUserSubscriptionSchema), authController.updateUserSubscription);
 
 module.exports = router;
