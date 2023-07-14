@@ -1,10 +1,12 @@
 ## GoIT Node.js Course Homework - hw02-express
 ### Завдання:
-Написати REST API для роботи з колекцією контактів. Для роботи з REST API використовувався [Postman] (https://www.getpostman.com/).
+01. Написана REST API для роботи з колекцією контактів. Для роботи з REST API використовувався [Postman] (https://www.getpostman.com/).
 
-Створений аккаунт на MongoDB Atlas та db-contacts, а в ній колекція contacts.
+02. Створений аккаунт на MongoDB Atlas та db-contacts, а в ній колекція contacts.
 Для створення підключення до MongoDB використовувався npm пакет Mongoose.
 У функціях обробки запитів замінений код CRUD-операцій над контактами з файлу (гілка hw02-express) на Mongoose-методи для роботи з колекцією контактів в базі даних MongoDB (гілка 03-mongodb).
+
+03. Додана логіка аутентифікації / авторизації користувача через JWT (гілка 04-auth).
 
 ### Команди npm:
 

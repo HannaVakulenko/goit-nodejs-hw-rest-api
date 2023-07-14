@@ -4,11 +4,18 @@ const { HttpError } = require('../helpers');
 
 const { ctrlWrapper } = require('../decorators'); // try...catch wrapper!
 
-const { contactUpdateFavoriteSchema } = require("../schemas/contacts-schema");
+const { contactUpdateFavoriteSchema } = require("../schemas");
 
 const getAllContacts = async (req, res) => { // - controler function req->res
+  
+  const { _id: owner } = req.user; // destructuring with renaming (_id ---> owner)
 
-  const result = await Contact.find({}, "-createdAt -updatedAt");
+  // pagination vs. quiry filter!!!
+  const {page = 1, limit = 20, ...query}= req.query;
+  const skip = (page - 1) * limit;
+
+  const result = await Contact.find({owner, ...query}, "-createdAt -updatedAt", {skip, limit});
+  
   res.json(result);
 
 }
@@ -26,8 +33,9 @@ const getContactById = async (req, res) => { // controler function req.params->r
 
 const addContact = async (req, res) => { // controler function req-res
 
-    const result = await Contact.create(req.body);
-    res.status(201).json(result);
+  const { _id: owner } = req.user;
+  const result = await Contact.create({...req.body, owner});
+  res.status(201).json(result);
 
 }
 
