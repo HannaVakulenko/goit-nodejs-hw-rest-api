@@ -25,7 +25,7 @@ router.post("/logout", authenticate, authController.logout);
 // PATCH /api/users
 router.patch("/", authenticate, validateBody(schemas.updateUserSubscriptionSchema), authController.updateUserSubscription);
 
-// PATCH /api/avatars
+// PATCH /api/avatars  --- for watching it in browser use link http://localhost:3000/avatars/<filename with extension>
 router.patch('/avatars', authenticate, upload.single('avatar'), authController.updateAvatar);
 
 module.exports = router;
