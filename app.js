@@ -14,6 +14,7 @@ const formatsLogger = app.get('env') === 'development' ? 'dev' : 'short';
 app.use(logger(formatsLogger));
 app.use(cors());
 app.use(express.json()); // if body content-type application/json, middleware create object in req.body
+app.use(express.static("public")); // сonfigure Express to distribute static files from the public folder (http://localhost:3000/avatars/<file name with extension>)
 
 // routes
 app.use("/api/users", authRouter);
