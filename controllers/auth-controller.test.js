@@ -1,4 +1,4 @@
-// unit tests for the login controller using Jest
+// Integration tests for the login controller using Jest
 
 const mongoose = require("mongoose");
 const request = require("supertest");
