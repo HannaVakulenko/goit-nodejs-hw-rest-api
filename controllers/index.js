@@ -4,6 +4,7 @@ const {
     getCurrent,
     logout,
     updateUserSubscription,
+    updateAvatar,
 } = require('./auth-controller');
 
 const {
@@ -22,6 +23,7 @@ module.exports = {
     getCurrent,
     logout,
     updateUserSubscription,
+    updateAvatar,
     // contacts-controllers
     getAllContacts,
     getContactById,

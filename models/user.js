@@ -28,7 +28,10 @@ const userSchema = new Schema({
     },
     token: {
         type: String,
-    }
+    },
+    avatarUrl: {
+        type: String,
+    },
 }, {versionKey: false, timestamps: true});
 
 // adding middleware movieSchema when an error occurred while adding or updating data
