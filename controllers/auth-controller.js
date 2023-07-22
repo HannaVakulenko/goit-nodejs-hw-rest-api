@@ -10,9 +10,11 @@ const Jimp = require('jimp');
 
 const User = require('../models/user');
 
-const { HttpError, sendEmail } = require('../helpers');
+const { HttpError } = require('../helpers');
 
 const { ctrlWrapper } = require('../decorators'); // try...catch wrapper!
+
+const { sendEmail } = require('../services/email');
 
 const { SECRET_KEY, BASE_URL } = process.env;
 
